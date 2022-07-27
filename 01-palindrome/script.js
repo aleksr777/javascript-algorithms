@@ -14,14 +14,38 @@
 */
 
 function palindrome(str) {
-    // Напишите код здесь
+    //Массив символов и знаков препинания
+    const arrSigns = [' ', ',', '.', ':', ';', '!', '?', '-', '_', '№', '@', '#', '%', '^', '&', '*', '(', ')', '+', '=', '\\', '\|', '\/', '\'', '\"', '\`', '\[', '\]'];
+    // Приводим строку в нижний регистр
+    str = str.toLowerCase();
+    //Переводим строку в массив
+    const arrDirect = str.split('');
+    //Удаляем лишние символы и знаки препинания из массива
+    for (let i = 0; i < arrSigns.length; i++) {
+        for (let j = 0; j < arrDirect.length; j++) {
+            if (arrSigns[i] === arrDirect[j]) {
+                arrDirect.splice(j, 1);                
+            }
+        }
+    }
+    // Копируем массив в другой, меняя порядок элементов на обратный.
+    const arrRevers = arrDirect.slice().reverse();
+    // Сверяем массивы и возвращаем результат
+     for (let i = 0; i < arrDirect.length; i++) {
+         if (arrDirect[i] !== arrRevers[i]) {
+             return false;
+         }
+     };
+     return true;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(palindrome('топот')); // должно быть true
+console.log(palindrome('топот')); // true
 console.log(palindrome('Saippuakivikauppias')); // true
 console.log(palindrome('привет')); // false
+console.log(palindrome('О, лета тело!')); // true
+
 
 /*
  * Бонус. Задача для любознательных. Пусть функция принимает на вход любую строку,
