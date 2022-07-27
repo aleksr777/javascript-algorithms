@@ -11,12 +11,18 @@
 */
 
 function fizzBuzz(num) {
-    if (!num || !Number(num) || !Boolean(num) || num <= 0) {
-        console.log('Введены некорректные данные!');
+    const numb = Number(num);
+    if (!num) {
+        console.log('Данные не введены!');
+    }
+    else if (!numb) {
+        console.log('Введено не число!');
+    }
+    else if (numb <= 0 || !Number.isInteger(num)) {
+        console.log('Нужно ввести целое число больше 0!');
     }
     else {
-        num = Number(num);
-        for (let i = 1; i <= num; i++) {
+        for (let i = 1; i <= numb; i++) {
             if (i % 3 === 0 && i % 5 === 0) {
                 console.log('fizzbuzz');
             }
@@ -35,4 +41,4 @@ function fizzBuzz(num) {
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(fizzBuzz(25));
+console.log(fizzBuzz(5));
