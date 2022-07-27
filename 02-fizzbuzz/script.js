@@ -15,10 +15,7 @@ function fizzBuzz(num) {
     if (!num) {
         console.log('Данные не введены!');
     }
-    else if (!numb) {
-        console.log('Введено не число!');
-    }
-    else if (numb <= 0 || !Number.isInteger(num)) {
+    else if (!numb || numb <= 0 || !Number.isInteger(numb)) {
         console.log('Нужно ввести целое число больше 0!');
     }
     else {
@@ -41,4 +38,4 @@ function fizzBuzz(num) {
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(fizzBuzz(5));
+console.log(fizzBuzz('35'));
