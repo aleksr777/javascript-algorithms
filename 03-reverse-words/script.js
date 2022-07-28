@@ -9,6 +9,7 @@
 */
 
 function reverseWords(str) {
+    if (!str || typeof str !== 'string') { return str; }
     const wordsArr = str.split(' ');
     const reverseWordsArr = wordsArr.slice().reverse();
     return str = reverseWordsArr.join(' ');
