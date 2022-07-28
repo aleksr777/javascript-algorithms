@@ -13,7 +13,6 @@ function uniq(arr) {
         for (let n = 0; n < arr.length; n++) {
             if (i == n) { continue }
             else if (arr[i] === arr[n]) {
-                console.log(arr[n]);
                 arr.splice(n, 1);
             }
         }
