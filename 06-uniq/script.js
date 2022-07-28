@@ -8,7 +8,17 @@
 */
 
 function uniq(arr) {
-    // Напишите код здесь
+    // Просто сравним элементы между собой, избегая сравнения элемента с самим собой
+    for (let i = 0; i < arr.length; i++) {
+        for (let n = 0; n < arr.length; n++) {
+            if (i == n) { continue }
+            else if (arr[i] === arr[n]) {
+                console.log(arr[n]);
+                arr.splice(n, 1);
+            }
+        }
+    }
+    return arr;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
