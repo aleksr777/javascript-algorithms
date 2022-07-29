@@ -10,13 +10,15 @@
 */
 
 function isPrime(n) {
-    // Напишите код здесь
+    n = Number(n);
+    if (n === 2 || n === 3 || n % 2 !== 0 && n % 3 !== 0 && n > 1) { return true }
+    return false;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(isPrime(0)); // false
-console.log(isPrime(1)); // false
-console.log(isPrime(3)); // true
-console.log(isPrime(6)); // false
-console.log(isPrime(17)); // true
+console.log(isPrime('0'));
+console.log(isPrime(3));
+console.log(isPrime('3'));
+console.log(isPrime(2));
+console.log(isPrime(9));
