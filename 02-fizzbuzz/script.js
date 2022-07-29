@@ -13,10 +13,10 @@
 function fizzBuzz(num) {
     const numb = Number(num);
     if (!num) {
-        console.log('Данные не введены!');
+        return 'Данные не введены!';
     }
     else if (!numb || numb <= 0 || !Number.isInteger(numb)) {
-        console.log('Нужно ввести целое число больше 0!');
+        return 'Нужно ввести целое число больше 0!';
     }
     else {
         for (let i = 1; i <= numb; i++) {
@@ -33,9 +33,10 @@ function fizzBuzz(num) {
                 console.log(i);
             }
         }
+        return '';
     }
 };
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(fizzBuzz());
+console.log(fizzBuzz(23));

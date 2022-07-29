@@ -9,9 +9,27 @@
 */
 
 function fibonacci(n) {
-    // Напишите код здесь
+    if (n === 0 || n === '0') {
+        return 'Допускается ввод только целого числа больше нуля!';
+    }
+    n = Number(n);
+    if (!n) {
+        return 'Число не введено!';
+    }
+    else if (typeof n !== 'number' || n < 0 || !Number.isInteger(n)) {
+        return 'Допускается ввод только целого числа больше нуля!';
+    }
+    else {
+        const arr = [0, 1];
+        for (let i = 2; i <= n + 1; i += 1) {
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+        return arr[n - 1];
+    }
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(fibonacci(4)); // 2. Четвёртое число последовательности — двойка (0, 1, 1, 2)
+console.log(fibonacci(10));
+console.log(fibonacci(24));
