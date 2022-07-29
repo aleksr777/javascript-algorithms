@@ -11,12 +11,9 @@ function factorial(n) {
     if (n === 0 || n === '0') {
         return 1;
     }
-    else if (!n) {
-        return 'Число не введено!';
-    }
     n = Number(n);
-    if (typeof n !== 'number' || n < 0 || !Number.isInteger(n)) {
-        return 'Допускается ввод только целого числа, исключая отрицательные значения!';
+    if (typeof n !== 'number' || Boolean(n) !== true || n < 0 || !Number.isInteger(n)) {
+        return false;
     }
     return n * factorial(n - 1);
 }
@@ -29,5 +26,5 @@ console.log(factorial(1)); // 1
 console.log(factorial(6)); // 720
 console.log(factorial('6')); // 720
 console.log(factorial('-6')); // 720
-console.log(factorial(-10)); // 720
-console.log(factorial(1.2)); // 720
+console.log(factorial(-10)); // false
+console.log(factorial(1.2)); // false
