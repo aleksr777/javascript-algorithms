@@ -27,7 +27,7 @@ function findVowels(str) {
     const wordArr = str.split('');
 
     // подсчитываем...
-    let consonantsSum = wordArr.reduce((prev, item) => {
+    const consonantsSum = wordArr.reduce((prev, item) => {
         if (verify(item)) { return prev += 1 }
         else { return prev }
     }, 0);

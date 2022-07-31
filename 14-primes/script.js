@@ -7,7 +7,7 @@
 */
 
 function primes(num) {
-    arr = [];
+    const arr = [];
 
     if (num === 1 || num === '1' || num === 0 || num === '0') { return false }
 
