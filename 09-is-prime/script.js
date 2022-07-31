@@ -10,14 +10,19 @@
 */
 
 function isPrime(n) {
+    if (n === 1 || n === '1' || n === 0 || n === '0') { return false }
     n = Number(n);
-    if (n === 2 || n === 3 || n % 2 !== 0 && n % 3 !== 0 && n > 1) { return true }
-    return false;
+    if (typeof n !== 'number' || Boolean(n) !== true) { return false }
+    for (let j = 2; j <= 10; j += 1) {
+        if (n === j) { continue }
+        else if (n % j === 0) { return false }
+    }
+    return true;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(isPrime('0'));
+console.log(isPrime('11'));
 console.log(isPrime(3));
 console.log(isPrime('3'));
 console.log(isPrime(2));

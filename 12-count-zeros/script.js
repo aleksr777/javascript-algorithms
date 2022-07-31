@@ -6,7 +6,7 @@
  *
 */
 
-function countZeros(n) {
+function countZeros(n) {    
     n = Number(n);
     if (typeof n !== 'number' || Boolean(n) !== true && n !== 0) { return false }
     else if (n < 10) { return 0 }
